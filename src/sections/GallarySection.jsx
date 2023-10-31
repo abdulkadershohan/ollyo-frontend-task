@@ -1,5 +1,6 @@
 import React from 'react'
-import ImageIcon from '../components/ImageIcon'
+import AddPhotos from '../components/AddPhotos'
+import SingleImage from '../components/SingleImage'
 const DATA = [
     {
         id: 1,
@@ -49,48 +50,16 @@ const DATA = [
 
 export default function GallarySection() {
     return (
-        <div
-            className='bg-[#fff] rounded-bl-lg rounded-br-lg p-4 border border-gray-200 shadow-sm'
-        >
-            <div
-                className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 px-2 py-6'
-            >
-                {/* <div
-                    className='grid-cols-4 w-64 h-64 rounded-lg overflow-hidden border-2 border-gray-200'
-                >
-                    <img src={require('../assets/images/image-1.webp')} alt="sds" />
-                </div> */}
+        <div className='bg-[#fff] rounded-bl-lg rounded-br-lg p-4 border border-gray-200 shadow-sm'>
+            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 px-2 py-6'>
                 {
                     DATA.map((item) => (
-                        <div
-                            key={item.id}
-                            className={` rounded-lg overflow-hidden border-2 border-gray-200 
-                            ${item.id === 1 ? 'col-span-2 row-span-2' : ''} relative cursor-pointer
-                            after:hover:opacity-100 after:transition-all after:duration-500 after:ease-in-out after:opacity-0
-                             after:bg-black after:bg-opacity-50 after:absolute 
-                             after:top-0 after:left-0 after:w-full after:h-full                           
-                            `}
-                        >
-                            <img
-                                src={item.image}
-                                alt="sds"
-                                className='w-full h-full object-cover '
-                            />
-                            <input type="checkbox"
-                                className='absolute top-4 left-4 w-5 h-5'
-                            />
-
-                        </div>
+                        <SingleImage
+                            {...item}
+                        />
                     ))
                 }
-                <div
-                    className='flex flex-col items-center justify-center gap-4 border-2 border-dashed border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100'
-                >
-                    <ImageIcon />
-                    <p>
-                        Add Image
-                    </p>
-                </div>
+                <AddPhotos />
 
             </div>
         </div >

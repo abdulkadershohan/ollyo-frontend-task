@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/navbar/Navbar'
+import Navbar from '../components/Navbar'
 import GallarySection from './GallarySection'
 
 export default function MainSection() {
